@@ -35,7 +35,7 @@ steps:
     image: quay.io/sighup/trivy-offline:latest
     pull: always
     commands:
-      - trivy --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --skip-update davralin/borgmatic
+      - trivy image --exit-code 1 --severity HIGH,CRITICAL --ignore-unfixed --skip-update davralin/borgmatic
 
   - name: notify
     image: plugins/matrix
